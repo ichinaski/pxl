@@ -29,3 +29,16 @@ You may want to squint your eyes or take a few steps backwards when looking at t
 |![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.jpg =x250) | ![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.pxl.png =x250) |
 |
 |![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.jpg =x250) | ![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.pxl.png =x250) |
+
+<img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/gh.png" height="250">
+
+
+|  image  | pxl   |
+|:--:|:--:|
+|<img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/gh.png" height="250"> | <img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/gh.pxl.png" height="250"> |
+|
+|<img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/batman.jpg" height="250"> | <img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/batman.pxl.png" height="250"> |
+|
+|<img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.jpg" height="250"> | <img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.pxl.png" height="250"> |
+|
+|<img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.jpg" height="250"> | <img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.pxl.png" height="250"> |
