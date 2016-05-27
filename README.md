@@ -22,12 +22,10 @@ You may want to squint your eyes or take a few steps backwards when looking at t
 
 |  image  | pxl   |
 |:--:|:--:|
-|![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/gh.png =x250) | ![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/gh.pxl.png =x250) |
+|![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/gh.png =x250) | ![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/gh.pxl.png =x250) |
 |
-|![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/batman.jpg =250x) | ![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/batman.pxl.png =250x) |
+|![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/batman.jpg =x250) | ![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/batman.pxl.png =x250) |
 |
-|![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/elvis.jpg =250x) | ![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/elvis.pxl.png =250x) |
+|![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.jpg =x250) | ![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.pxl.png =x250) |
 |
-|![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/gd.jpg =250x) | ![image](file:////Users/ichinaski/projects/go/src/github.com/ichinaski/pxl/img/gd.pxl.png =250x) |
-
-
+|![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.jpg =x250) | ![image](https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.pxl.png =x250) |
