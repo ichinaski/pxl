@@ -14,6 +14,8 @@ You will need to have [Go](https://golang.org) installed and configured in your 
 
 where the optional flag `-r` sets the cursor's width/height ratio. This flag has a default value of 2.35, make sure you update it to match your terminal environment.
 
+Close the image with `<ESC>`.
+
 ### Disclaimer
 
 You may want to squint your eyes or take a few steps backwards when looking at the output.
