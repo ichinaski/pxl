@@ -37,14 +37,14 @@ func TestTermColor(t *testing.T) {
 	}
 
 	want = uint16(231 + 1) // White + default offset
-	have = termColor(1, 1, 1)
+	have = termColor(255, 255, 255)
 
 	if want != have {
 		t.Errorf("term color mismatch. Want: %v, Have: %v\n", want, have)
 	}
 
 	want = uint16(196 + 1) // Red + default offset
-	have = termColor(1, 0, 0)
+	have = termColor(255, 0, 0)
 
 	if want != have {
 		t.Errorf("term color mismatch. Want: %v, Have: %v\n", want, have)
