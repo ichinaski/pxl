@@ -32,3 +32,6 @@ You may want to squint your eyes or take a few steps backwards when looking at t
 |<img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.jpg" height="250"> | <img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/elvis.pxl.png" height="250"> |
 |
 |<img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.jpg" height="250"> | <img src="https://raw.githubusercontent.com/ichinaski/pxl/master/img/gd.pxl.png" height="250"> |
+
+### License
+This software is distributed under the BSD-style license found in the LICENSE file.
