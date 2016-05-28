@@ -33,9 +33,9 @@ func imgArea(termX, termY int, imgScale, whratio float64) (int, int, int, int) {
 
 // avgRGB calculates the average RGB color within the given
 // rectangle, and returns the [0,1] range of each component.
-func avgRGB(img image.Image, startX, startY, endX, endY int) (float64, float64, float64) {
+func avgRGB(img image.Image, startX, startY, endX, endY int) (uint16, uint16, uint16) {
 	var total = [3]uint16{}
-	var count int
+	var count uint16
 	for x := startX; x < endX; x++ {
 		for y := startY; y < endY; y++ {
 			if (!image.Point{x, y}.In(img.Bounds())) {
@@ -49,9 +49,9 @@ func avgRGB(img image.Image, startX, startY, endX, endY int) (float64, float64, 
 		}
 	}
 
-	r := float64(total[0]) / float64(count) / 0xff
-	g := float64(total[1]) / float64(count) / 0xff
-	b := float64(total[2]) / float64(count) / 0xff
+	r := total[0] / count
+	g := total[1] / count
+	b := total[2] / count
 	return r, g, b
 }
 

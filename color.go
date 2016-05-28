@@ -1,9 +1,6 @@
 package main
 
-import (
-	"image/color"
-	"math"
-)
+import "image/color"
 
 func rgb(c color.Color) (uint16, uint16, uint16) {
 	r, g, b, _ := c.RGBA()
@@ -12,10 +9,10 @@ func rgb(c color.Color) (uint16, uint16, uint16) {
 }
 
 // termColor converts a 24-bit RGB color into a term256 compatible approximation.
-func termColor(r, g, b float64) uint16 {
-	rterm := uint16(math.Floor(r*5+0.5)) * 36
-	gterm := uint16(math.Floor(g*5+0.5)) * 6
-	bterm := uint16(math.Floor(b*5 + 0.5))
+func termColor(r, g, b uint16) uint16 {
+	rterm := (((r * 5) + 127) / 255) * 36
+	gterm := (((g * 5) + 127) / 255) * 6
+	bterm := (((b * 5) + 127) / 255)
 
 	return rterm + gterm + bterm + 16 + 1 // termbox default color offset
 }
