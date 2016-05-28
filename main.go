@@ -34,7 +34,7 @@ func draw(img image.Image) {
 		for x := 0; x < w; x++ {
 			// Calculate average color for the corresponding image rectangle
 			// fitting in this cell. We use a half-block trick, wherein the
-			// upper half of the cell displays the character ▀, effectively
+			// lower half of the cell displays the character ▄, effectively
 			// doubling the resolution of the canvas.
 			startX, startY, endX, endY := imgArea(x, y, imgScale, whratio)
 
@@ -44,7 +44,7 @@ func draw(img image.Image) {
 			r, g, b = avgRGB(img, startX, (startY+endY)/2, endX, endY)
 			colorDown := termbox.Attribute(termColor(r, g, b))
 
-			termbox.SetCell(x, y, '▀', colorUp, colorDown)
+			termbox.SetCell(x, y, '▄', colorDown, colorUp)
 		}
 	}
 	termbox.Flush()
