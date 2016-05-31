@@ -12,26 +12,21 @@ import (
 	"github.com/nsf/termbox-go"
 )
 
-var whratio float64 // The terminal's cursor width/height ratio
-
-func init() {
-	flag.Float64Var(&whratio, "r", 2.35, "Cursor width/height ratio in your terminal")
-}
-
 func draw(img image.Image) {
-	w, h := termbox.Size()
+	// Get terminal size and cursor width/height ratio
+	width, height, whratio := canvasSize()
 
 	bounds := img.Bounds()
 	imgW, imgH := bounds.Dx(), bounds.Dy()
 
-	imgScale := scale(imgW, imgH, w, h, whratio)
+	imgScale := scale(imgW, imgH, width, height, whratio)
 
 	// Resize canvas to fit scaled image
-	w, h = int(float64(imgW)/imgScale), int(float64(imgH)/(imgScale*whratio))
+	width, height = int(float64(imgW)/imgScale), int(float64(imgH)/(imgScale*whratio))
 
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
-	for y := 0; y < h; y++ {
-		for x := 0; x < w; x++ {
+	for y := 0; y < height; y++ {
+		for x := 0; x < width; x++ {
 			// Calculate average color for the corresponding image rectangle
 			// fitting in this cell. We use a half-block trick, wherein the
 			// lower half of the cell displays the character ▄, effectively
