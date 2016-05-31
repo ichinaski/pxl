@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"image"
 	"os"
 	"time"
@@ -46,7 +45,6 @@ func draw(img image.Image) {
 }
 
 func main() {
-	flag.Parse()
 	img, err := load(os.Args[len(os.Args)-1])
 	if err != nil {
 		panic(err)

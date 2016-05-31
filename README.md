@@ -10,9 +10,7 @@ You will need to have [Go](https://golang.org) installed and configured in your 
 
 ### Usage
 
-`pxl [-r whratio] filename`
-
-where the optional flag `-r` sets the cursor's width/height ratio. This flag has a default value of 2.35, make sure you update it to match your terminal environment.
+`pxl filename`
 
 Close the image with `<ESC>`.
 
