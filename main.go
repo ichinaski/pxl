@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"os"
 	"time"
@@ -45,6 +46,12 @@ func draw(img image.Image) {
 }
 
 func main() {
+	if len(os.Args) != 2 {
+		fmt.Printf("Usage: %s <filename>\n\n", os.Args[0])
+		fmt.Println("Close the image with <ESC>.")
+		os.Exit(1)
+	}
+
 	img, err := load(os.Args[len(os.Args)-1])
 	if err != nil {
 		panic(err)
