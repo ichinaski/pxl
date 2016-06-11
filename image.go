@@ -7,6 +7,8 @@ import (
 	"unsafe"
 )
 
+const defaultRatio float64 = 7.0 / 3.0 // The terminal's default cursor width/height ratio
+
 // load an image stored in the given path
 func load(filename string) (image.Image, error) {
 	file, err := os.Open(filename)
@@ -25,7 +27,13 @@ func canvasSize() (int, int, float64) {
 		panic(err)
 	}
 	rows, cols, width, height := size[0], size[1], size[2], size[3]
-	return int(cols), int(rows), float64(height/rows) / float64(width/cols)
+
+	var whratio = defaultRatio
+	if width > 0 && height > 0 {
+		whratio = float64(height/rows) / float64(width/cols)
+	}
+
+	return int(cols), int(rows), whratio
 }
 
 // scales calculates the image scale to fit within the terminal width/height
