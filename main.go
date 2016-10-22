@@ -45,26 +45,14 @@ func draw(img image.Image) {
 	termbox.Flush()
 }
 
-func main() {
-	if len(os.Args) != 2 {
-		fmt.Printf("Usage: %s <filename>\n\n", os.Args[0])
-		fmt.Println("Close the image with <ESC> or by pressing 'q'.")
-		os.Exit(1)
-	}
-
-	img, err := load(os.Args[len(os.Args)-1])
+func showInUI(image string) {
+	img, err := load(image)
 	if err != nil {
 		panic(err)
 	}
-
-	err = termbox.Init()
-	if err != nil {
-		panic(err)
-	}
-	defer termbox.Close()
-	termbox.SetOutputMode(termbox.Output256)
 
 	draw(img)
+
 loop:
 	for {
 		switch ev := termbox.PollEvent(); ev.Type {
@@ -77,5 +65,24 @@ loop:
 		default:
 			time.Sleep(10 * time.Millisecond)
 		}
+	}
+}
+
+func main() {
+	if len(os.Args) < 2 {
+		fmt.Printf("Usage: %s <filename>...\n\n", os.Args[0])
+		fmt.Println("Close the image with <ESC> or by pressing 'q'.")
+		os.Exit(1)
+	}
+
+	err := termbox.Init()
+	if err != nil {
+		panic(err)
+	}
+	defer termbox.Close()
+	termbox.SetOutputMode(termbox.Output256)
+
+	for i := 1; i < len(os.Args); i++ {
+		showInUI(os.Args[i])
 	}
 }
