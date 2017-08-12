@@ -45,7 +45,7 @@ func draw(img image.Image) {
 	termbox.Flush()
 }
 
-func showInUI(image string) {
+func display(image string) {
 	img, err := load(image)
 	if err != nil {
 		panic(err)
@@ -53,12 +53,11 @@ func showInUI(image string) {
 
 	draw(img)
 
-loop:
 	for {
 		switch ev := termbox.PollEvent(); ev.Type {
 		case termbox.EventKey:
 			if ev.Key == termbox.KeyEsc || ev.Ch == 'q' {
-				break loop
+				return
 			}
 		case termbox.EventResize:
 			draw(img)
@@ -83,6 +82,6 @@ func main() {
 	termbox.SetOutputMode(termbox.Output256)
 
 	for i := 1; i < len(os.Args); i++ {
-		showInUI(os.Args[i])
+		display(os.Args[i])
 	}
 }
