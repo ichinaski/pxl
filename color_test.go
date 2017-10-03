@@ -1,4 +1,4 @@
-package main
+package pxl
 
 import (
 	"image/color"
