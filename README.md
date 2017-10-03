@@ -14,6 +14,25 @@ You will need to have [Go](https://golang.org) installed and configured in your 
 
 Close the image with `<ESC>`.
 
+### Library
+
+```go
+package main
+
+import "github.com/ichinaski/pxl"
+
+func main() {
+  fImg, _ := os.Open("someimage.jpg")
+  defer fImg.Close()
+  img, _, _ := image.Decode(fImg1)
+
+
+  pxl.Init()
+  defer pxl.Close()
+  Display(img)
+}
+```
+
 ### Disclaimer
 
 You may want to squint your eyes or take a few steps backwards when looking at the output.
