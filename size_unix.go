@@ -1,4 +1,16 @@
-// +build !windows
+// Builds for these work but not all the resultant binaries have been tested.
+// +build darwin dragonfly freebsd linux netbsd openbsd
+
+// Note that as of at least termbox-go@v1.1.1 the following GOOS
+// do not build (for termbox):
+//	aix
+//	illumos
+//	plan9
+//	solaris
+// For other reasons, pxl doesn't appear to build on GOOS:
+//	android
+//	ios
+
 package main
 
 import (
