@@ -1,10 +1,8 @@
-package main
+// Package pxl is a little hack to display images in the terminal.
+package pxl
 
 import (
-	"fmt"
 	"image"
-	"os"
-	"time"
 
 	_ "image/jpeg"
 	_ "image/png"
@@ -12,9 +10,15 @@ import (
 	"github.com/nsf/termbox-go"
 )
 
-func draw(img image.Image) {
+// Draw clears terminal and draws the given image.
+//
+// Note: termbox.Init must have already been called.
+func Draw(img image.Image) error {
 	// Get terminal size and cursor width/height ratio
-	width, height, whratio := canvasSize()
+	width, height, whratio, err := canvasSize()
+	if err != nil {
+		return err
+	}
 
 	bounds := img.Bounds()
 	imgW, imgH := bounds.Dx(), bounds.Dy()
@@ -24,7 +28,10 @@ func draw(img image.Image) {
 	// Resize canvas to fit scaled image
 	width, height = int(float64(imgW)/imgScale), int(float64(imgH)/(imgScale*whratio))
 
-	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
+	err = termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
+	if err != nil {
+		return err
+	}
 	for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
 			// Calculate average color for the corresponding image rectangle
@@ -42,46 +49,5 @@ func draw(img image.Image) {
 			termbox.SetCell(x, y, '▄', colorDown, colorUp)
 		}
 	}
-	termbox.Flush()
-}
-
-func display(image string) {
-	img, err := load(image)
-	if err != nil {
-		panic(err)
-	}
-
-	draw(img)
-
-	for {
-		switch ev := termbox.PollEvent(); ev.Type {
-		case termbox.EventKey:
-			if ev.Key == termbox.KeyEsc || ev.Ch == 'q' {
-				return
-			}
-		case termbox.EventResize:
-			draw(img)
-		default:
-			time.Sleep(10 * time.Millisecond)
-		}
-	}
-}
-
-func main() {
-	if len(os.Args) < 2 {
-		fmt.Printf("Usage: %s <filename>...\n\n", os.Args[0])
-		fmt.Println("Close the image with <ESC> or by pressing 'q'.")
-		os.Exit(1)
-	}
-
-	err := termbox.Init()
-	if err != nil {
-		panic(err)
-	}
-	defer termbox.Close()
-	termbox.SetOutputMode(termbox.Output256)
-
-	for i := 1; i < len(os.Args); i++ {
-		display(os.Args[i])
-	}
+	return termbox.Flush()
 }
