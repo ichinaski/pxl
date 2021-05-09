@@ -1,14 +1,6 @@
-package main
+package pxl
 
 import "testing"
-
-func TestMax(t *testing.T) {
-	var want float64 = 5
-	have := max(1, 2, 3, 4, 5)
-	if want != have {
-		t.Errorf("Max number mismatch. Want: %v, Have: %v\n", want, have)
-	}
-}
 
 func TestScale(t *testing.T) {
 	var whratio float64
