@@ -6,7 +6,7 @@ pxl is a little hack to display images in the terminal.
 
 You will need to have [Go](https://golang.org) installed and configured in your path. Your terminal must have xterm-256color mode enabled.
 
-`go get github.com/ichinaski/pxl`
+`go install github.com/ichinaski/pxl@latest`
 
 ### Usage
 
